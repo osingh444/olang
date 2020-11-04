@@ -57,24 +57,7 @@ static types getOperatorType(char ch) {
 }
 
 static int isOperator(char ch) {
-	switch(ch) {
-		case '(': return 1;
-		case ')': return 1;
-		case '{': return 1;
-		case '}': return 1;
-		case '+': return 1;
-		case '-': return 1;
-		case '*': return 1;
-		case '/': return 1;
-		case '\'': return 1;
-		case '"': return 1;
-		case '>': return 1;
-		case '<': return 1;
-		case ',': return 1;
-		case '=': return 1;
-		case '.': return 1;
-		default: return 0;
-	}
+	return getOperatorType(ch) != NOTOP;
 }
 
 static int isSameType(types type, char ch) {
